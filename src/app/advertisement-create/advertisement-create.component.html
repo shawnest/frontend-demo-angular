@@ -1,0 +1,16 @@
+<div class="container mt-3">
+    <form [formGroup]="adForm" (ngSubmit)="onSubmit()" #fform="ngForm" novalidate>
+        <h3>You're user Tom right now!</h3>
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" class="form-control" formControlName="title" id="title" aria-describedby="title" placeholder="Enter Title" required>
+          <small id="titleHelp" class="form-text text-muted">Please give us an informative title</small>
+        </div>
+        {{errMsg}}
+        <div *ngIf="adForm.get('title').hasError('required') && adForm.get('title').touched" class="alert alert-danger">
+              Title is required.
+        </div>
+        <button type="submit" [disabled]="adForm.pristine || adForm.invalid" class="btn btn-primary">Submit</button>
+      </form>
+  
+</div>

@@ -1,0 +1,18 @@
+<!-- <div class="container mt-3">
+  <h3>Currently registered users:</h3>
+    <ul class="list-group mt-4">
+        <li class="list-group-item" *ngFor="let user of users">{{user.name}}</li>
+      </ul>
+</div> -->
+<div class="container mt-5">
+    <ul class="list-unstyled">
+        <li class="media mt-3" *ngFor="let user of users">
+          <img src="/assets/avatar.png" class="mr-3" alt="...">
+          <div class="media-body">
+            <h5 class="mt-0 mb-1">{{user.name}}</h5>
+            Some description
+          </div>
+        </li>
+    </ul>
+</div>
+
